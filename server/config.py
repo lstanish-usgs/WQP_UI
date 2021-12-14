@@ -113,4 +113,4 @@ LOG_DELETE_TIME = (1, 0)  # tuple of format (hour, minute)
 # To use hashed assets, set this to the gulp-rev-all rev-manifest.json path
 ASSET_MANIFEST_PATH = os.environ.get('ASSET_MANIFEST_PATH')
 
-STATIC_ROOT = os.environ.get('STATIC_ROOT', '/static/')
+STATIC_ROOT = os.environ.get('STATIC_ROOT', '/wqp/static/')

@@ -129,7 +129,7 @@ from .wqx.views import wqx  # pylint: disable=C0413
 from . import filters  # pylint: disable=C0413
 
 app.register_blueprint(auth_blueprint, url_prefix='')
-app.register_blueprint(portal_ui, url_prefix='')
+app.register_blueprint(portal_ui, url_prefix='/wqp')
 app.register_blueprint(sites_blueprint, url_prefix='/sites')
 app.register_blueprint(wqx, url_prefix='/portal/schemas')
 
