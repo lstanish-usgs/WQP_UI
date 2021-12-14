@@ -157,4 +157,4 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 )
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
-app.wsgi_app = WhiteNoise(app.wsgi_app, root='/home/python/assets', prefix='static/')
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='/home/python/assets', prefix='wqp/static/')
