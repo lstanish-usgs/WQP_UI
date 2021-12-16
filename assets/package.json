@@ -96,7 +96,7 @@
     "loglevel": "1.8.0",
     "numeral": "2.0.6",
     "select2": "4.0.13",
-    "uswds": "2.11.2",
+    "uswds": "2.13.0",
     "vue": "2.6.14",
     "vue-multiselect": "2.1.6",
     "vuex": "3.6.2"
