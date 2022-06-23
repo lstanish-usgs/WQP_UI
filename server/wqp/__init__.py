@@ -9,7 +9,7 @@ from requests import Session
 from whitenoise import WhiteNoise
 
 
-__version__ = '6.6.0dev'
+__version__ = '6.6.0'
 
 
 def _create_log_handler(log_dir=None, log_name=__name__):
