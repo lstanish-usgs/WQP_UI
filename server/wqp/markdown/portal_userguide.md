@@ -5,7 +5,7 @@
 
 [**Explanation of data retrievals**](/server/wqp/markdownTextFiles/portal_userguide.md#explanation-of-data-retrievals)
 * [Table 4. Site Data Only](/server/wqp/markdownTextFiles/portal_userguide.md#table-4-site-data-only-result-retrieval-metadata)
-* [Table 5. Project Data Only](/server/wqp/markdownTextFiles/portal_userguide.md#table-5-project-data-only-result-retrieval-metadata)
+* [Table 5. Project Data](/server/wqp/markdownTextFiles/portal_userguide.md#table-5-project-data-result-retrieval-metadata)
 * [Table 6. Project Monitoring Location Weighting](/server/wqp/markdownTextFiles/portal_userguide.md#table-6-project-monitoring-location-weighting-result-retrieval-metadata)
 * [Table 7. Sample Results (Physical/Chemical)](/server/wqp/markdownTextFiles/portal_userguide.md#table-7-sample-results-physicalchemical-result-retrieval-metadata)
 * [Table 8. Sample Results (Biological)](/server/wqp/markdownTextFiles/portal_userguide.md#table-8-sample-results-biological-result-retrieval-metadata)
@@ -14,17 +14,22 @@
 * [Table 11. Sampling Activity Metrics](/server/wqp/markdownTextFiles/portal_userguide.md#table-11-sampling-activity-metrics-result-retrieval-metadata)
 * [Table 12. Result Detection Quantitation Limit Data](/server/wqp/markdownTextFiles/portal_userguide.md#table-12-result-detection-quantitation-limit-data-result-retrieval-metadata) -->
 
-[**Download all Water Quality Exchange (WQX) allowable value lists and definitions**](/portal_userguide/#water-quality-exchange-allowable-value-lists-and-definitions)
+[**Download Water Quality Exchange (WQX) domain value lists**]((/portal_userguide/#download-water-quality-exchange-allowable-value-lists-and-definitions))
 
 
-The ***Water Quality Data Portal (WQP)*** provides an easy way to access data stored in three large water quality databases. Input parameters on the [form](https://www.waterqualitydata.us/portal/) include *location*, *site*, *sampling*, and *date* parameters. The WQP can return ***site information*** (locations where samples were collected), or it can return ***sample results*** (analytical data of collected samples). Any field in the form left blank will cause a search for **all** parameters in that field. 
->*Example:* If a user selects US and California for the *country* and *state* respectively, but leaves the *county* field blank, data will be returned for **all** counties in California. All data will also be returned for the fields under *SITE PARAMETERS* and *SAMPLING PARAMETERS*.
+## **WATER QUALITY PORTAL USER GUIDE** 
+
+### **Introduction**
+
+The ***Water Quality Data Portal (WQP)*** provides an easy way to access data stored in two large water quality databases. Input parameters on the [form](https://www.waterqualitydata.us/portal/) include *location*, *site*, *sampling*, and *date* parameters. The WQP can return ***site information*** (locations where samples were collected), or it can return ***sample results*** (analytical data of collected samples). Any field in the form left blank will cause a search for **all** parameters in that field. 
+
+> *Example:* If a user selects US and California for the *country* and *state* respectively, but leaves the *county* field blank, data will be returned for **all** counties in California. All data will also be returned for the fields under *SITE PARAMETERS* and *SAMPLING PARAMETERS*.
 
 The same input parameters can be used to make data retrievals using web services. For more information and examples on accessing the web services, see the [Web Services Guide](https://www.waterqualitydata.us/webservices_documentation/). 
 
-Users less familiar with the standard notation used to encode a web services request may find the form more convenient. In the Advanced form, URL's are automatically generated that reflect the current selections. The URL's can be copied and pasted for sharing or for use in various programming environments.
+The Portal website includes both a **Basic** and **Advanced** query form, both of which are designed for users who prefer a web interface rather than our web services. The **Basic** form provides a simplified user interface with minimal query options, while the **Advanced** form provides a more comprehensive suite of search capabilities. The Advanced form also will automatically generate query URL's that reflect the current selections. The URL's can be copied and pasted for sharing or for use in various programming environments.
 
-#### **Available Databases**
+##### **_Available Databases:_**
 
 **NWIS (USGS)** - Water-resources data collected from approximately 1.5 million sites in all 50 states, the District of Columbia, Puerto Rico, the Virgin Islands, Guam, American Samoa, and the Commonwealth of the Northern Mariana Islands. NWIS (USGS) is updated every 24 hours. Data recently added to NWIS (USGS) may not be immediately accessible through the WQP. Data are available for each location dating back to the earliest record available in the database.
 
@@ -34,13 +39,13 @@ Users less familiar with the standard notation used to encode a web services req
 
 The WQP can be searched through three different search options:
 
-1. ***Location parameters***
-2. ***Site parameters***
-3. ***Sampling parameters***
+1. _Location parameters_
+2. _Site parameters_
+3. _Sampling parameters_
 
-#### **LOCATION PARAMETERS**
-<details markdown="1">
-  <summary>Expand Parameters</summary>
+#### **Location Parameters**
+
+##### **Basic location parameters**
 
 ***Country*** - Use the **country window** to select one or multiple ***countries*** represented in the database. Parentheses after each country represent which database(s) it is represented in. 
 
@@ -63,7 +68,7 @@ The WQP can be searched through three different search options:
 
 ***Site Type***  - ***Site type*** indicates a *natural* or *human-made* feature affecting the hydrologic conditions measured at a site. Use the **site type window** to select one or multiple site types. Parentheses after each site type represent which database(s) it is represented in. ***Table 1*** includes a definition for each available site type.
 
-#### ***Table 1.* Available site types and definitions**
+***Table 1. Available site types and definitions***
 <details markdown="1">
   <summary>View Table</summary>
 
@@ -92,7 +97,9 @@ The WQP can be searched through three different search options:
 <details markdown="1">
   <summary>Advanced Location Parameters</summary>
 
-***Bounding Box*** - Enter the North and South *latitudes* and the East and West *longitudes* (**decimal degrees** referenced to NAD83) to create a ***bounding box***. Longitudes in the western hemisphere should begin with a negative sign.
+Additional search options are available in the 'Advanced' query form, including:
+
+***Bounding Box*** - Enter the North and South *latitudes* and the East and West *longitudes* (**decimal degrees** referenced to NAD83) to create a bounding box. Longitudes in the western hemisphere should begin with a negative sign.
 
 > *Example:*
 > * North: 46.12
@@ -104,13 +111,13 @@ The WQP can be searched through three different search options:
 
 ***Site ID*** - Identifies a ***monitoring location*** by a unique name, number, or code. Use the **site ID window** to select one or multiple site IDs. Type at least two characters for a list to appear. 
 
-> *Web Services Request:* IDs are displayed as: AGENCY-STATION NUMBER. If STATION NUMBER is specified but not AGENCY, "USGS" will be assigned as the default.
+> *When making a web services request:* IDs are displayed as: AGENCY-STATION NUMBER. If STATION NUMBER is specified but not AGENCY, "USGS" will be assigned as the default.
 > * For NWIS (USGS) site: ```#siteid=USGS-301650089215300```
 > * For WQX (EPA) site: ```#siteid=R10BUNKER-CUA005-5```
 > * For multiple sites: ```#siteid=IN002-385000086310010&siteid=USSCS-311039092211614&siteid=USEPA-414120087304701```
 
 ***HUC*** - Identifies the ***hydrological unit*** ([lists and maps of hydrologic units](http://water.usgs.gov/GIS/huc.html)) up to the cataloging unit level of precision. Use the **HUC ID window** to select one or multiple HUC IDs. Separate multiple HUC IDs with a **semicolon** (";"). Select partial HUCs using **trailing wildcards** ("*"). 
-> *Web Services Request:*
+> *When making a web services request:*
 > * One site: ```#huc=01010005```
 > * Multiple sites: ```#huc=01010003%3B01010004```
 > * Partial HUCs: ```010801*```
@@ -120,8 +127,8 @@ The WQP can be searched through three different search options:
 </details>
 
 #### **FILTER RESULTS**
-<details markdown="1">
-  <summary>Expand Parameters</summary>
+
+##### Basic filtering parameters
 
 ***Data Source*** - Select one or multiple ***databases*** from which the data will be retrieved. **All** databases are searched by default.
 
@@ -129,7 +136,7 @@ The WQP can be searched through three different search options:
 
 ***Sample Media*** - Identifies the ***environmental medium*** where a sample was taken. Use the **sample media window** to select one or multiple sample media types. Parentheses after each sample medium represent which database(s) it is represented in. ***Table 2*** includes a definition for each sample medium that is available.
 
-#### ***Table 2.* Available sample media and definitions**
+***Table 2. Available sample media and definitions***
 <details markdown="1">
   <summary>View Table</summary>
 
@@ -151,13 +158,13 @@ The WQP can be searched through three different search options:
 ***Characteristic Group*** - Groups types of ***environmental measurements***. Use the **characteristic group window** to select one or multiple characteristic groups. Parentheses after each characteristic group represent which database(s) it is represented in. A complete listing of which characteristic matches to which characteristic group [is available for download](http://cdx.epa.gov/wqx/download/DomainValues/Characteristic_CSV.zip).
 
 <details markdown="1">
-  <summary>Advanced Results Filters</summary>
+  <summary>View Advanced Filtering Parameters</summary>
 
 ***Minimum sampling activities per site*** - Returns only sites where at least a ***minimum number*** of sampling activities have been reported. Use the **minimum number window** to select a value; the default is **1**.
 
 ***Minimum result per site*** - Returns only sites where at least a ***minimum number*** of results have been reported. Use the **minimum results window** to select a value; the default is **1**.
 
-***Characteristic*** - Identifies types of ***environmental measurements***. Use the **characteristics window** to select one or multiple characteristics. Parentheses after each characteristic represent which database(s) it is represented in. The names are derived from the WQX (EPA) [Substance Registry System (SRS)](http://iaspub.epa.gov/sor_internet/registry/substreg/home/overview/home.do). USGS uses parameter codes for the same purpose and has [associated most parameters to SRS names](http://www.waterqualitydata.us/public_srsnames.jsp).
+***Characteristic*** - Identifies types of ***environmental measurements***. Use the **characteristics window** to select one or multiple characteristics. Parentheses after each characteristic represent which database(s) it is represented in. The names are derived from the WQX (EPA) [Substance Registry System (SRS)](http://iaspub.epa.gov/sor_internet/registry/substreg/home/overview/home.do). USGS uses parameter codes for the same purpose and has [associated most parameters to SRS names](http://www.waterqualitydata.us/public_srsnames/).
 
 The nomenclature for WQX (EPA) and USGS characteristics are **not** identical. 
 > *Example:* The WQX (EPA) lists each dissolved oxygen characteristic, while the USGS classifies dissolved oxygen under "oxygen". Consequently, users interested in retrieving dissolved oxygen data from both databases must select *"dissolved oxygen"* from WQX (EPA) and *"oxygen"* from the WQP list of characteristics. Selecting *"oxygen"* will return dissolved oxygen results from the USGS **and** all WQX (EPA) results relating to free gaseous oxygen. 
@@ -179,17 +186,18 @@ Small differences in naming may cause chemically identical characteristics to be
 
 </details>
 
+
 </details>
 
 #### **DOWNLOAD THE DATA**
-<details markdown="1">
-  <summary>Expand Section</summary>
 
-***Data Type*** - ***Water monitoring data*** is delivered in a format and nomenclature defined by the [WQX-Outbound Schema](http://www.exchangenetwork.net/schema/WQX/2/WQX_DET_v2.1b.xls). *Metadata* on these formats is displayed in ***Tables 4-12***.
+A note on ***Data Type*** - The data are delivered in a format and nomenclature defined by the [WQX-Outbound Schema](http://www.exchangenetwork.net/schema/WQX/2/WQX_DET_v2.1b.xls). *Metadata* on these formats is displayed in ***Tables 4-12***.
 
-***File Format*** - Choose a ***file format*** to download the result set. Four available formats are listed and described in ***Table 3***.
+***Data Profiles*** - Select which profile (details on them in Section 'Explanation of dataretrievals' below) to download.
 
-#### ***Table 3.* Available file formats**
+***File Format*** - Choose a file format to download the result set. The available formats are listed and described in ***Table 3***.
+
+***Table 3.* Available file formats**
 <details markdown="1">
   <summary>View Table</summary>
 
@@ -202,10 +210,11 @@ Small differences in naming may cause chemically identical characteristics to be
 
 </details>
 
-***Sort Data*** - ***Sorts data*** by *organization*, *monitoringLocationID*, and *activityID*. Sorting **increases** response time. If you are manually sorting, set **sorted=no**. The sorted document is delivered in the WQX standard.
+Deprecated feature: ***Sort Data*** - This feature is currently unavailable.
+
 
 <details markdown="1">
-  <summary>Advanced Download Parameters</summary>
+  <summary>View Advanced Download Parameters</summary>
 
 ***Show Sites on Map*** - Previews the ***locations of sites*** **before** downloading the data, up to 250,000 sites. Sites are color coded by data source. 
 
@@ -233,18 +242,18 @@ There are hundreds of different *data elements* in the WQX 3.0 schema, which wou
 
 Water monitoring data is delivered in a format and nomenclature defined by the [WQX-Outbound Schema](https://www.exchangenetwork.net/schema/WQX/3/WQX_DET_v3.0.xls). 
 
-Under *"DOWNLOAD DATA"*, the data can be retrieved in the following formats:
+Under *"DOWNLOAD DATA"*, the data can be retrieved for the following profiles:
 
 * Organization Data
 * [Site Data Only](#table-4-site-data-only-result-retrieval-metadata)
-* [Project Data](/#table-5-project-data-only-result-retrieval-metadata)*
+* [Project Data](/#table-5-project-data-only-result-retrieval-metadata)
 * [Project Monitoring Location Weighting](#table-6-project-monitoring-location-weighting-result-retrieval-metadata)*
 * [Sample Results (Physical/Chemical)](#table-7-sample-results-physicalchemical-result-retrieval-metadata)
 * [Sample Results (Biological)](#table-8-sample-results-biological-result-retrieval-metadata)
 * [Sample Results (Narrow)](#table-9-sample-results-narrow-result-retrieval-metadata)
-* [Sampling Activity](#table-10-sampling-activity-result-retrieval-metadata)*
+* [Sampling Activity](#table-10-sampling-activity-result-retrieval-metadata)
 * [Sampling Activity Metrics](#table-11-sampling-activity-metrics-result-retrieval-metadata)*
-* Biological Habitat Metrics
+* Biological Habitat Metrics*
 * [Result Detection Quantitation Limit Data](/#table-12-result-detection-quantitation-limit-data-result-retrieval-metadata)*
 
 *Available only in the Advanced form
@@ -298,7 +307,7 @@ The tables below list the metadata for each retrieval type.
 
 </details>
 
-#### ***Table 5.* "Project Data Only" Result Retrieval Metadata**
+#### ***Table 5.* "Project Data" Result Retrieval Metadata**
 
 Contains information about projects to monitor water quality. Contains project IDs, to allow joins with other tables.
 <details markdown="1">
@@ -790,15 +799,16 @@ Constituent concentration that, when processed through the complete method, prod
 
 </details>
 
-### **Water Quality Exchange Allowable value lists and definitions**
+
+### **Download Water Quality Exchange allowable value lists and definitions**
 <details markdown="1">
   <summary>Expand List</summary>
 
-To download the domain lists (as zipped Comma Separated Variable documents), click the links below:
+Click the links below to download the domain lists as zipped files in Comma Separated Values (.csv) format
 
 [All - The entire domain lists](https://cdx.epa.gov/wqx/download/DomainValues/All_CSV.zip)
 
-
+[All Domains - All domain value lists as separate files in a single download](https://cdx.epa.gov/wqx/download/DomainValues/All_Domains_CSV.zip)
 
 Individual Domain Values Lists:
 
@@ -810,49 +820,65 @@ Individual Domain Values Lists:
 * [AddressType](https://cdx.epa.gov/wqx/download/DomainValues/AddressType_CSV.zip)
 * [AnalyticalMethod](https://cdx.epa.gov/wqx/download/DomainValues/AnalyticalMethod_CSV.zip)
 * [AnalyticalMethodContext](https://cdx.epa.gov/wqx/download/DomainValues/AnalyticalMethodContext_CSV.zip)
+* [AquiferType](https://cdx.epa.gov/wqx/download/DomainValues/AquiferType_CSV.zip)
 * [Assemblage](https://cdx.epa.gov/wqx/download/DomainValues/Assemblage_CSV.zip)
 * [BiologicalIntent](https://cdx.epa.gov/wqx/download/DomainValues/BiologicalIntent_CSV.zip)
 * [CellForm](https://cdx.epa.gov/wqx/download/DomainValues/CellForm_CSV.zip)
 * [CellShape](https://cdx.epa.gov/wqx/download/DomainValues/CellShape_CSV.zip)
 * [Characteristic](https://cdx.epa.gov/wqx/download/DomainValues/Characteristic_CSV.zip)
-* [CharacteristicWithPickList](https://cdx.epa.gov/wqx/download/DomainValues/CharacteristicWithPickList_CSV.zip)*
+* [CharacteristicAlias](https://cdx.epa.gov/wqx/download/DomainValues/CharacteristicAlias_CSV.zip)
 * [Country](https://cdx.epa.gov/wqx/download/DomainValues/Country_CSV.zip)
 * [County](https://cdx.epa.gov/wqx/download/DomainValues/County_CSV.zip)
 * [DetectionQuantitationLimitType](https://cdx.epa.gov/wqx/download/DomainValues/DetectionQuantitationLimitType_CSV.zip)
 * [ElectronicAddressType](https://cdx.epa.gov/wqx/download/DomainValues/ElectronicAddressType_CSV.zip)
 * [FrequencyClassDescriptor](https://cdx.epa.gov/wqx/download/DomainValues/FrequencyClassDescriptor_CSV.zip)
+* [FrequencyClassType](https://cdx.epa.gov/wqx/download/DomainValues/FrequencyClassType_CSV.zip)
+* [GearProcedureUnit](https://cdx.epa.gov/wqx/download/DomainValues/GearProcedureUnit_CSV.zip)
 * [Habit](https://cdx.epa.gov/wqx/download/DomainValues/Habit_CSV.zip)
+* [HabitatSelectionMethod](https://cdx.epa.gov/wqx/download/DomainValues/HabitatSelectionMethod_CSV.zip)
 * [HorizontalCollectionMethod](https://cdx.epa.gov/wqx/download/DomainValues/HorizontalCollectionMethod_CSV.zip)
 * [HorizontalCoordinateReferenceSystemDatum](https://cdx.epa.gov/wqx/download/DomainValues/HorizontalCoordinateReferenceSystemDatum_CSV.zip)
+* [HydrologicCondition](https://cdx.epa.gov/wqx/download/DomainValues/HydrologicCondition_CSV.zip)
+* [HydrologicEvent](https://cdx.epa.gov/wqx/download/DomainValues/HydrologicEvent_CSV.zip)
+* [LocalAquiferCodeContext](https://cdx.epa.gov/wqx/download/DomainValues/LocalAquiferContext_CSV.zip)
 * [MeasureUnit](https://cdx.epa.gov/wqx/download/DomainValues/MeasureUnit_CSV.zip)
 * [MethodSpeciation](https://cdx.epa.gov/wqx/download/DomainValues/MethodSpeciation_CSV.zip)
 * [MetricType](https://cdx.epa.gov/wqx/download/DomainValues/MetricType_CSV.zip)
 * [MetricTypeContext](https://cdx.epa.gov/wqx/download/DomainValues/MetricTypeContext_CSV.zip)
 * [MonitoringLocationType](https://cdx.epa.gov/wqx/download/DomainValues/MonitoringLocationType_CSV.zip)
+* [NationalAquifer](https://cdx.epa.gov/wqx/download/DomainValues/NationalAquifer_CSV.zip)
 * [NetType](https://cdx.epa.gov/wqx/download/DomainValues/NetType_CSV.zip)
 * [Organization](https://cdx.epa.gov/wqx/download/DomainValues/Organization_CSV.zip)
+* [QAQCCharacteristicValidation](https://cdx.epa.gov/wqx/download/DomainValues/QAQCCharacteristicValidation_CSV.zip)
 * [ReferenceLocationType](https://cdx.epa.gov/wqx/download/DomainValues/ReferenceLocationType_CSV.zip)
+* [RelativeDepth](https://cdx.epa.gov/wqx/download/DomainValues/RelativeDepth_CSV.zip)
 * [ResultDetectionCondition](https://cdx.epa.gov/wqx/download/DomainValues/ResultDetectionCondition_CSV.zip)
 * [ResultLaboratoryComment](https://cdx.epa.gov/wqx/download/DomainValues/ResultLaboratoryComment_CSV.zip)
 * [ResultMeasureQualifier](https://cdx.epa.gov/wqx/download/DomainValues/ResultMeasureQualifier_CSV.zip)
-* [ResultMeasureValuePickList](https://cdx.epa.gov/wqx/download/DomainValues/ResultMeasureValuePickList_CSV.zip)*
+* [ResultMeasureValuePickList](https://cdx.epa.gov/wqx/download/DomainValues/ResultMeasureValuePickList_CSV.zip)
 * [ResultSampleFraction](https://cdx.epa.gov/wqx/download/DomainValues/ResultSampleFraction_CSV.zip)
+* [ResultSamplingPointType](https://cdx.epa.gov/wqx/download/DomainValues/ResultSamplingPointType_CSV.zip)
 * [ResultStatus](https://cdx.epa.gov/wqx/download/DomainValues/ResultStatus_CSV.zip)
 * [ResultTemperatureBasis](https://cdx.epa.gov/wqx/download/DomainValues/ResultTemperatureBasis_CSV.zip)
 * [ResultTimeBasis](https://cdx.epa.gov/wqx/download/DomainValues/ResultTimeBasis_CSV.zip)
 * [ResultValueType](https://cdx.epa.gov/wqx/download/DomainValues/ResultValueType_CSV.zip)
 * [ResultWeightBasis](https://cdx.epa.gov/wqx/download/DomainValues/ResultWeightBasis_CSV.zip)
 * [SampleCollectionEquipment](https://cdx.epa.gov/wqx/download/DomainValues/SampleCollectionEquipment_CSV.zip)
+* [SampleCollectionEquipmentType](https://cdx.epa.gov/wqx/download/DomainValues/SampleCollectionEquipmentType_CSV.zip)
 * [SampleContainerColor](https://cdx.epa.gov/wqx/download/DomainValues/SampleContainerColor_CSV.zip)
 * [SampleContainerType](https://cdx.epa.gov/wqx/download/DomainValues/SampleContainerType_CSV.zip)
 * [SampleTissueAnatomy](https://cdx.epa.gov/wqx/download/DomainValues/SampleTissueAnatomy_CSV.zip)
 * [SamplingDesignType](https://cdx.epa.gov/wqx/download/DomainValues/SamplingDesignType_CSV.zip)
 * [State](https://cdx.epa.gov/wqx/download/DomainValues/State_CSV.zip)
 * [StatisticalBase](https://cdx.epa.gov/wqx/download/DomainValues/StatisticalBase_CSV.zip)
+* [TargetCount](https://cdx.epa.gov/wqx/download/DomainValues/TargetCount_CSV.zip)
 * [Taxon](https://cdx.epa.gov/wqx/download/DomainValues/Taxon_CSV.zip)
+* [TaxonAlias](https://cdx.epa.gov/wqx/download/DomainValues/TaxonAlias_CSV.zip)
+* [TaxonGroup](https://cdx.epa.gov/wqx/download/DomainValues/TaxonGroup_CSV.zip)
+* [TaxonRank](https://cdx.epa.gov/wqx/download/DomainValues/TaxonRank_CSV.zip)
 * [TelephoneNumberType](https://cdx.epa.gov/wqx/download/DomainValues/TelephoneNumberType_CSV.zip)
-* [TimeZone](https://cdx.epa.gov/wqx/download/DomainValues/TimeZone_CSV.zip)
 * [ThermalPreservativeUsed](https://cdx.epa.gov/wqx/download/DomainValues/ThermalPreservativeUsed_CSV.zip)
+* [TimeZone](https://cdx.epa.gov/wqx/download/DomainValues/TimeZone_CSV.zip)
 * [ToxicityTestType](https://cdx.epa.gov/wqx/download/DomainValues/ToxicityTestType_CSV.zip)
 * [Tribe](https://cdx.epa.gov/wqx/download/DomainValues/Tribe_CSV.zip)
 * [VerticalCollectionMethod](https://cdx.epa.gov/wqx/download/DomainValues/VerticalCollectionMethod_CSV.zip)
@@ -861,8 +887,5 @@ Individual Domain Values Lists:
 * [WellFormationType](https://cdx.epa.gov/wqx/download/DomainValues/WellFormationType_CSV.zip)
 * [WellType](https://cdx.epa.gov/wqx/download/DomainValues/WellType_CSV.zip)
 
-Note: CharacteristicWithPickList* and 
-ResultMeasureValuePickList* are the same or 
-equivalent.
 
 </details>
