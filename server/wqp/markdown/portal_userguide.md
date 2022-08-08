@@ -889,3 +889,15 @@ Individual Domain Values Lists:
 
 
 </details>
+
+
+
+### **Cite the Water Quality Portal**
+
+General Portal citations should use the following:
+
+* Water Quality Portal. Washington (DC): National Water Quality Monitoring Council, United States Geological Survey (USGS), Environmental Protection Agency (EPA); 2021. https://www.waterqualitydata.us.
+
+Citations for specific datasets should use this format:
+
+* National Water Quality Monitoring Council, YYYY, Water Quality Portal, accessed mm, dd, yyyy, hyperlink_for_query
